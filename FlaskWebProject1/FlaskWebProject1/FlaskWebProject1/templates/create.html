@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Создание поста {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="title">Название</label>
+        <input type="text" name="title" placeholder="Название" class="form-control" value="{{ request.form['title'] }}"> </input>
+    </div>
+
+    <div class="form-group">
+        <label for="content">Содержание</label>
+        <textarea name="content" placeholder="Содержание"
+                  class="form-control">{{ request.form['content'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="auctor">Автор</label>
+        <textarea name="auctor" placeholder="Автор"
+                  class="form-control">{{ request.form['auctor'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Создать</button>
+    </div>
+</form>
+{% endblock %}
